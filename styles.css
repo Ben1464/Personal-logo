@@ -11,16 +11,17 @@ body {
 
 .card {
     width: 520px;
-    height: 280px;
+    height: 340px;
     background: linear-gradient(145deg, #2f3136, #383b40);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around; /* Distributes child elements with space in between */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    padding: 20px; /* Consistent padding around */
 }
 
 .card:hover {
@@ -28,21 +29,25 @@ body {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
+.left-pic, .right-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative; /* Added for control over z-index */
+    z-index: 1;  /* Lower than hexagon */
+}
+
 .hexagon {
     width: 170px;
     height: 98px;
     background: linear-gradient(145deg, #00a8cc, #007799);
-    position: relative;
-    z-index: 1;
+    position: relative; /* Added for control over z-index */
+    z-index: 2;  /* Higher than pictures */
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 30px rgba(0, 168, 204, 0.6);
     transition: all 0.3s ease;
-}
-
-.hexagon:hover {
-    box-shadow: 0 0 40px rgba(0, 168, 204, 0.8);
 }
 
 .hexagon:before,
@@ -68,8 +73,6 @@ body {
     font-size: 26px;
     font-weight: 600;
     color: #ffffff;
-    z-index: 2;
-    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -77,30 +80,13 @@ body {
     color: #e5e5e5;
 }
 
-.left-pic, .right-pic {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.left-pic {
-    left: 10px;
-}
-
-.right-pic {
-    right: 10px;
-}
-
 .footer {
     position: absolute;
-    bottom: 10px;  /* 10 pixels from the bottom of the card */
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);  /* This will center the footer */
-    color: #00fafa;  /* Futuristic cyan */
+    transform: translateX(-50%);
+    color: #00fafa;
     font-size: 16px;
     font-weight: 500;
-    text-shadow: 0 0 10px #00fafa;  /* Give it a glowing effect */
+    text-shadow: 0 0 10px #00fafa;
 }
