@@ -48,7 +48,7 @@ body {
 .hexagon {
     width: 170px;
     height: 98px;
-    background: linear-gradient(145deg, #00a8cc, #007799); 
+    background: linear-gradient(145deg, #00a8cc, #007799);
     position: relative;
     z-index: 1;
     display: flex;
@@ -92,4 +92,21 @@ body {
 
 .logo-text:hover {
     color: #e5e5e5;
+}
+
+.left-pic, .right-pic {
+    position: absolute;
+    width: 150px;  /* Further increased size */
+    height: 150px;  /* Further increased size */
+    border-radius: 50%;  /* Makes the image circular */
+    top: 50%;
+    transform: translateY(-50%);  /* Centers the images vertically */
+}
+
+.left-pic {
+    left: 10px;
+}
+
+.right-pic {
+    right: 10px;
 }
